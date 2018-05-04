@@ -15,7 +15,9 @@ func Init(cfg *Config) (err error) {
 
 	var s service.Service
 
-	prg := &program{}
+	prg := &program{
+		config: cfg,
+	}
 
 	if s, err = service.New(prg, &cfg.Config); err != nil {
 		return
